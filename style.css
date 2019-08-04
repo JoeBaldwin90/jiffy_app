@@ -1,0 +1,140 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.jiffy_app {
+  min-height: 85vh;
+  padding: 3vh 3vw;
+  display: flex;
+  flex-direction: column; /* Stack child elements*/
+	justify-content: space-between;
+}
+
+.top,
+.middle,
+.indicators {
+  text-align: center;
+  position: relative;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  text-align: center;
+  color: #fff;
+}
+
+.search-input {
+  font-size: 72px;
+}
+
+/* style for placeholder text on our input */
+.search-input::-webkit-input-placeholder {
+  color: #323232;
+}
+.search-input::-moz-placeholder {
+  color: #323232;
+}
+.search-input:-ms-input-placeholder {
+  color: #323232;
+}
+.search-input::-ms-input-placeholder {
+  color: #323232;
+}
+.search-input::placeholder {
+  color: #323232;
+}
+
+.search-clear,
+.spinner {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.search-clear {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+}
+
+.videos,
+.middle,
+.grid {
+  display: grid;
+  place-items: center;
+}
+
+.video {
+  grid-area: 1/1; /* child video element full width & height of grid */
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+}
+
+.search-input,
+.videos,
+.full-area {
+  grid-area: 1/1;
+}
+
+.search-hint,
+.spinner {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.show-hint .search-hint,
+.loading .spinner,
+.has-results .search-clear {
+  opacity: 1;
+}
+
+.loading .search-hint,
+.has-results .title {
+  opacity: 0;
+}
+
+.title {
+  transition: opacity 0.5s ease;
+}
+
+/* responsive styles  */
+.video {
+  width: 100%;
+}
+
+.videos {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.search-input {
+  width: 94vw;
+  line-height: 1;
+  height: 88px;
+}
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  .search-input {
+    font-size: 32px;
+  }
+
+}
